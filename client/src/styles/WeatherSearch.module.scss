@@ -1,0 +1,57 @@
+@import 'variables';
+
+.searchForm {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+
+  input {
+    flex: 1;
+    min-width: 200px;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    border: 2px solid $primary-color;
+    border-radius: 25px;
+    outline: none;
+    transition: all 0.3s ease;
+
+    &:focus {
+      border-color: $secondary-color;
+      box-shadow: 0 0 0 2px rgba($secondary-color, 0.2);
+    }
+
+    &::placeholder {
+      color: $text-color;
+    }
+  }
+
+  button {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    background: linear-gradient(135deg, $primary-color, $secondary-color);
+    color: $text-color;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    &:active {
+      transform: translateY(-1px);
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+
+    input, button {
+      width: 100%;
+    }
+  }
+}
